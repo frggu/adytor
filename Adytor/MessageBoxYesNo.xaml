@@ -1,0 +1,20 @@
+﻿<Window x:Class="Adytor.MessageBoxYesNo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Adytor"
+        mc:Ignorable="d"
+        Title="Replace Me" Height="200" Width="450">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="lblMessage" Text="Replace Me" Grid.Row="0" Margin="10,10,10,10"></TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,10,10,10">
+            <Button Content="Yes" Click="ButtonClickYes" MinWidth="90"/>
+            <Button Content="No" Click="ButtonClickNo" MinWidth="90" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,637 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OxyPlot.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:OxyPlot.Wpf.CanvasRenderContext">
+            <summary>
+            Implements <see cref="T:OxyPlot.IRenderContext" /> for <see cref="T:System.Windows.Controls.Canvas" />.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.imagesInUse">
+            <summary>
+            The images in use
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.imageCache">
+            <summary>
+            The image cache
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.brushCache">
+            <summary>
+            The brush cache.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.fontFamilyCache">
+            <summary>
+            The font family cache
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.canvas">
+            <summary>
+            The canvas.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.clip">
+            <summary>
+            The clip rectangle.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.CanvasRenderContext.currentToolTip">
+            <summary>
+            The current tool tip
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.CanvasRenderContext.DpiScale">
+            <summary>
+            The dpi scale.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.CanvasRenderContext.VisualOffset">
+            <summary>
+            The visual offset relative to visual root.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.#ctor(System.Windows.Controls.Canvas)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.Wpf.CanvasRenderContext" /> class.
+            </summary>
+            <param name="canvas">The canvas.</param>
+        </member>
+        <member name="P:OxyPlot.Wpf.CanvasRenderContext.TextMeasurementMethod">
+            <summary>
+            Gets or sets the text measurement method.
+            </summary>
+            <value>The text measurement method.</value>
+        </member>
+        <member name="P:OxyPlot.Wpf.CanvasRenderContext.TextFormattingMode">
+            <summary>
+            Gets or sets the text formatting mode.
+            </summary>
+            <value>The text formatting mode. The default value is <see cref="F:System.Windows.Media.TextFormattingMode.Display"/>.</value>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawEllipse(OxyPlot.OxyRect,OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawEllipses(System.Collections.Generic.IList{OxyPlot.OxyRect},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawLine(System.Collections.Generic.IList{OxyPlot.ScreenPoint},OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawLineSegments(System.Collections.Generic.IList{OxyPlot.ScreenPoint},OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawPolygon(System.Collections.Generic.IList{OxyPlot.ScreenPoint},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawPolygons(System.Collections.Generic.IList{System.Collections.Generic.IList{OxyPlot.ScreenPoint}},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawRectangle(OxyPlot.OxyRect,OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawRectangles(System.Collections.Generic.IList{OxyPlot.OxyRect},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawText(OxyPlot.ScreenPoint,System.String,OxyPlot.OxyColor,System.String,System.Double,System.Double,System.Double,OxyPlot.HorizontalAlignment,OxyPlot.VerticalAlignment,System.Nullable{OxyPlot.OxySize})">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.MeasureText(System.String,System.String,System.Double,System.Double)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.SetToolTip(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.DrawImage(OxyPlot.OxyImage,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.SetClip(OxyPlot.OxyRect)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.ResetClip">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.CleanUp">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.MeasureTextByGlyphTypeface(System.String,System.String,System.Double,System.Double)">
+            <summary>
+            Measures the size of the specified text by a faster method (using GlyphTypefaces).
+            </summary>
+            <param name="text">The text.</param>
+            <param name="fontFamily">The font family.</param>
+            <param name="fontSize">The font size.</param>
+            <param name="fontWeight">The font weight.</param>
+            <returns>The size of the text.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetFontWeight(System.Double)">
+            <summary>
+            Gets the font weight.
+            </summary>
+            <param name="fontWeight">The font weight value.</param>
+            <returns>The font weight.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.MeasureTextSize(System.Windows.Media.GlyphTypeface,System.Double,System.String)">
+            <summary>
+            Fast text size calculation
+            </summary>
+            <param name="glyphTypeface">The glyph typeface.</param>
+            <param name="sizeInEm">The size.</param>
+            <param name="s">The text.</param>
+            <returns>The text size.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.CreateAndAdd``1(System.Double,System.Double)">
+            <summary>
+            Creates an element of the specified type and adds it to the canvas.
+            </summary>
+            <typeparam name="T">Type of element to create.</typeparam>
+            <param name="clipOffsetX">The clip offset executable.</param>
+            <param name="clipOffsetY">The clip offset asynchronous.</param>
+            <returns>The element.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.ApplyToolTip(System.Windows.FrameworkElement)">
+            <summary>
+            Applies the current tool tip to the specified element.
+            </summary>
+            <param name="element">The element.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetCachedBrush(OxyPlot.OxyColor)">
+            <summary>
+            Gets the cached brush.
+            </summary>
+            <param name="color">The color.</param>
+            <returns>The brush.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetCachedFontFamily(System.String)">
+            <summary>
+            Gets the cached font family.
+            </summary>
+            <param name="familyName">Name of the family.</param>
+            <returns>The FontFamily.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.SetStroke(System.Windows.Shapes.Shape,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,OxyPlot.LineJoin,System.Collections.Generic.IEnumerable{System.Double},System.Double)">
+            <summary>
+            Sets the stroke properties of the specified shape object.
+            </summary>
+            <param name="shape">The shape.</param>
+            <param name="stroke">The stroke color.</param>
+            <param name="thickness">The thickness.</param>
+            <param name="edgeRenderingMode">The edge rendering mode.</param>
+            <param name="lineJoin">The line join.</param>
+            <param name="dashArray">The dash array. Use <c>null</c> to get a solid line.</param>
+            <param name="dashOffset">The dash offset.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetImageSource(OxyPlot.OxyImage)">
+            <summary>
+            Gets the bitmap source.
+            </summary>
+            <param name="image">The image.</param>
+            <returns>The bitmap source.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.ToRect(OxyPlot.OxyRect)">
+            <summary>
+            Converts an <see cref="T:OxyPlot.OxyRect" /> to a <see cref="T:System.Windows.Rect" />.
+            </summary>
+            <param name="r">The rectangle.</param>
+            <returns>A <see cref="T:System.Windows.Rect" />.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetActualPoints(System.Collections.Generic.IList{OxyPlot.ScreenPoint},System.Double,OxyPlot.EdgeRenderingMode)">
+            <summary>
+            Snaps points to pixels if required by the edge rendering mode.
+            </summary>
+            <param name="points">The points.</param>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="edgeRenderingMode">The edge rendering mode.</param>
+            <returns>The processed points.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetActualRect(OxyPlot.OxyRect,System.Double,OxyPlot.EdgeRenderingMode)">
+            <summary>
+            Snaps a rectangle to device pixels if required by the edge rendering mode.
+            </summary>
+            <param name="rect">The rectangle.</param>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="edgeRenderingMode">The edge rendering mode.</param>
+            <returns>The processed rectangle.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.CanvasRenderContext.GetActualStrokeThickness(System.Double,OxyPlot.EdgeRenderingMode)">
+            <summary>
+            Snaps a stroke thickness to device pixels if required by the edge rendering mode.
+            </summary>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="edgeRenderingMode">The edge rendering mode.</param>
+            <returns>The processed stroke thickness.</returns>
+        </member>
+        <member name="T:OxyPlot.Wpf.PlotView">
+            <summary>
+            Represents a control that displays a <see cref="T:OxyPlot.PlotModel" />. This <see cref="T:OxyPlot.IPlotView"/> is based on <see cref="T:OxyPlot.Wpf.CanvasRenderContext"/>.
+            </summary>
+            <summary>
+            Represents a control that displays a <see cref="T:OxyPlot.PlotModel" />.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.PlotView.TextMeasurementMethodProperty">
+            <summary>
+            Identifies the <see cref="P:OxyPlot.Wpf.PlotView.TextMeasurementMethod"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.Wpf.PlotView" /> class.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.PlotView.DisconnectCanvasWhileUpdating">
+            <summary>
+            Gets or sets a value indicating whether to disconnect the canvas while updating.
+            </summary>
+            <value><c>true</c> if canvas should be disconnected while updating; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:OxyPlot.Wpf.PlotView.TextMeasurementMethod">
+            <summary>
+            Gets or sets the vertical zoom cursor.
+            </summary>
+            <value>The zoom vertical cursor.</value>
+        </member>
+        <member name="P:OxyPlot.Wpf.PlotView.Canvas">
+            <summary>
+            Gets the Canvas.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.PlotView.RenderContext">
+            <summary>
+            Gets the CanvasRenderContext.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.ClearBackground">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.CreatePlotPresenter">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.CreateRenderContext">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.OnRender(System.Windows.Media.DrawingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.RenderOverride">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.UpdateDpi">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.DoCopy(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <summary>
+            Performs the copy operation.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.Windows.Input.ExecutedRoutedEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.GetAncestorWindowFromVisualTree(System.Windows.DependencyObject)">
+            <summary>
+            Returns a reference to the window object that hosts the dependency object in the visual tree.
+            </summary>
+            <returns> The host window from the visual tree.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.SaveBitmap(System.String)">
+            <summary>
+            Saves the PlotView as a bitmap.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.SaveBitmap(System.String,System.Int32,System.Int32)">
+            <summary>
+            Saves the PlotView as a bitmap.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.SaveXaml(System.String)">
+            <summary>
+            Saves the PlotView as xaml.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.ToXaml">
+            <summary>
+            Renders the PlotView to xaml.
+            </summary>
+            <returns>The xaml.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.PlotView.ToBitmap">
+            <summary>
+            Renders the PlotView to a bitmap.
+            </summary>
+            <returns>A bitmap.</returns>
+        </member>
+        <member name="T:OxyPlot.Wpf.PngExporter">
+            <summary>
+            Provides functionality to export plots to png.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.PngExporter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.Wpf.PngExporter" /> class.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.PngExporter.Width">
+            <summary>
+            Gets or sets the width of the output image.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.PngExporter.Height">
+            <summary>
+            Gets or sets the height of the output image.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.PngExporter.Resolution">
+            <summary>
+            Gets or sets the resolution of the output image.
+            </summary>
+            <value>The resolution in dots per inch (dpi).</value>
+        </member>
+        <member name="M:OxyPlot.Wpf.PngExporter.Export(OxyPlot.IPlotModel,System.String,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Exports the specified plot model to a file.
+            </summary>
+            <param name="model">The model to export.</param>
+            <param name="fileName">The file name.</param>
+            <param name="width">The width of the output bitmap.</param>
+            <param name="height">The height of the output bitmap.</param>
+            <param name="resolution">The resolution (resolution). The default value is 96.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.PngExporter.Export(OxyPlot.IPlotModel,System.IO.Stream)">
+            <summary>
+            Exports the specified <see cref="T:OxyPlot.PlotModel" /> to the specified <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="stream">The output stream.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.PngExporter.ExportToBitmap(OxyPlot.IPlotModel)">
+            <summary>
+            Exports the specified plot model to a bitmap.
+            </summary>
+            <param name="model">The model to export.</param>
+            <returns>A bitmap.</returns>
+        </member>
+        <member name="T:OxyPlot.Wpf.SvgExporter">
+            <summary>
+            Provides functionality to export plots to scalable vector graphics using text measuring in WPF.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.SvgExporter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.Wpf.SvgExporter" /> class.
+            </summary>
+        </member>
+        <member name="T:OxyPlot.Wpf.TextMeasurementMethod">
+            <summary>
+            The text measurement methods.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.TextMeasurementMethod.TextBlock">
+            <summary>
+            Measurement by TextBlock. This gives a more accurate result than <see cref="F:OxyPlot.Wpf.TextMeasurementMethod.GlyphTypeface"/> as it takes into account text shaping.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.TextMeasurementMethod.GlyphTypeface">
+            <summary>
+            Measurement by glyph typeface. This is faster than <see cref="F:OxyPlot.Wpf.TextMeasurementMethod.TextBlock"/>, but does not take into account text shaping.
+            </summary>
+        </member>
+        <member name="T:OxyPlot.Wpf.PixelLayout">
+            <summary>
+            Provides functionality to support non-default dpi scaling
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.PixelLayout.Snap(System.Double,System.Double,System.Double,System.Windows.Point,System.Double)">
+            <summary>
+            Snaps a screen point to a pixel grid.
+            </summary>
+            <remarks>
+            Depending on the stroke thickness, the point is snapped either to the middle or the border of a pixel.
+            </remarks>
+            <param name="x">The x coordinate of the point.</param>
+            <param name="y">The y coordinate of the point.</param>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="visualOffset">A point structure which represents X and Y visual offsets relative to visual root</param>
+            <param name="dpiScale">The DPI scale.</param>
+            <returns>Snapped point</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.PixelLayout.Snap(System.Windows.Rect,System.Double,System.Windows.Point,System.Double)">
+            <summary>
+            Snaps a rectangle structure to a pixel grid.
+            </summary>
+            <remarks>
+            Depending on the stroke thickness, the rectangle bounds are snapped either to the middle or the border of pixels.
+            </remarks>
+            <param name="rect">Rectangle structure</param>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="visualOffset">A point structure which represents X and Y visual offsets relative to visual root</param>
+            <param name="dpiScale">The DPI scale.</param>
+            <returns>Snapped rectangle structure</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.PixelLayout.SnapStrokeThickness(System.Double,System.Double)">
+            <summary>
+            Snaps a stroke thickness to an integer multiple of device pixels.
+            </summary>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="dpiScale">The DPI scale.</param>
+            <returns>The snapped stroke thickness.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.PixelLayout.Snap(System.Double,System.Double,System.Double)">
+            <summary>
+            Snaps a screen coordinate to a pixel grid
+            </summary>
+            <param name="value">Screen coordinate</param>
+            <param name="offset">Pixel grid offset</param>
+            <param name="scale">Pixel grid scale</param>
+            <returns>Snapped coordinate</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.PixelLayout.GetPixelOffset(System.Double,System.Double)">
+            <summary>
+            Gets the pixel offset for the given scale and stroke thickness.
+            </summary>
+            <remarks>
+            This takes into account that lines with even width should be rendered on the border between two pixels, while lines with odd width should be rendered
+            in the middle of a pixel.
+            </remarks>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="scale">Pixel grid scale</param>
+            <returns>The pixel offset.</returns>
+        </member>
+        <member name="T:OxyPlot.Wpf.XamlExporter">
+            <summary>
+            Provides functionality to export plots to XAML.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlExporter.ExportToString(OxyPlot.IPlotModel,System.Double,System.Double)">
+            <summary>
+            Export the specified plot model to an xaml string.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+            <returns>A xaml string.</returns>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlExporter.Export(OxyPlot.PlotModel,System.String,System.Double,System.Double)">
+            <summary>
+            Exports the specified plot model to a xaml file.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="fileName">Name of the file.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlExporter.Export(OxyPlot.IPlotModel,System.Xml.XmlWriter,System.Double,System.Double)">
+            <summary>
+            Exports the specified plot model to a xml writer.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="writer">The xml writer.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="T:OxyPlot.Wpf.XamlRenderContext">
+            <summary>
+            Implements <see cref="T:OxyPlot.IRenderContext" /> for <see cref="T:System.Windows.Controls.Canvas" />. This does not use <see cref="T:System.Windows.Media.StreamGeometry"/> and therefore the output can be serialized to XAML.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.XamlRenderContext.MaxFiguresPerGeometry">
+            <summary>
+            The maximum number of figures per geometry.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.XamlRenderContext.MaxPolylinesPerLine">
+            <summary>
+            The maximum number of polylines per line.
+            </summary>
+        </member>
+        <member name="F:OxyPlot.Wpf.XamlRenderContext.MinPointsPerPolyline">
+            <summary>
+            The minimum number of points per polyline.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.#ctor(System.Windows.Controls.Canvas)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.Wpf.CanvasRenderContext" /> class.
+            </summary>
+            <param name="canvas">The canvas.</param>
+        </member>
+        <member name="P:OxyPlot.Wpf.XamlRenderContext.BalancedLineDrawingThicknessLimit">
+            <summary>
+            Gets or sets the thickness limit for "balanced" line drawing.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.DrawEllipses(System.Collections.Generic.IList{OxyPlot.OxyRect},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.DrawLine(System.Collections.Generic.IList{OxyPlot.ScreenPoint},OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.DrawLineSegments(System.Collections.Generic.IList{OxyPlot.ScreenPoint},OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.DrawPolygons(System.Collections.Generic.IList{System.Collections.Generic.IList{OxyPlot.ScreenPoint}},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.DrawRectangles(System.Collections.Generic.IList{OxyPlot.OxyRect},OxyPlot.OxyColor,OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.DrawLineBalanced(System.Collections.Generic.IList{OxyPlot.ScreenPoint},OxyPlot.OxyColor,System.Double,OxyPlot.EdgeRenderingMode,System.Double[],OxyPlot.LineJoin)">
+            <summary>
+            Draws the line using the MaxPolylinesPerLine and MinPointsPerPolyline properties.
+            </summary>
+            <param name="points">The points.</param>
+            <param name="stroke">The stroke color.</param>
+            <param name="thickness">The thickness.</param>
+            <param name="edgeRenderingMode">The edge rendering mode.</param>
+            <param name="dashArray">The dash array. Use <c>null</c> to get a solid line.</param>
+            <param name="lineJoin">The line join.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XamlRenderContext.ToPointCollection(System.Collections.Generic.IList{OxyPlot.ScreenPoint},System.Double,OxyPlot.EdgeRenderingMode)">
+            <summary>
+            Creates a point collection from the specified points. The points are snapped to pixels if required by the edge rendering mode,
+            </summary>
+            <param name="points">The points to convert.</param>
+            <param name="strokeThickness">The stroke thickness.</param>
+            <param name="edgeRenderingMode">The edge rendering mode.</param>
+            <returns>The point collection.</returns>
+        </member>
+        <member name="T:OxyPlot.Wpf.XpsExporter">
+            <summary>
+            Provides functionality to export plots to xps.
+            </summary>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OxyPlot.Wpf.XpsExporter" /> class.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.XpsExporter.Width">
+            <summary>
+            Gets or sets the width of the output document.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.XpsExporter.Height">
+            <summary>
+            Gets or sets the height of the output document.
+            </summary>
+        </member>
+        <member name="P:OxyPlot.Wpf.XpsExporter.TextFormattingMode">
+            <summary>
+            Gets or sets the text formatting mode.
+            </summary>
+            <value>The text formatting mode.</value>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.Export(OxyPlot.IPlotModel,System.String,System.Double,System.Double)">
+            <summary>
+            Exports the specified plot model to an xps file.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="fileName">The file name.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.Export(OxyPlot.IPlotModel,System.IO.Stream,System.Double,System.Double)">
+            <summary>
+            Exports the specified <see cref="T:OxyPlot.PlotModel" /> to the specified <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="stream">The stream.</param>
+            <param name="width">The width.</param>
+            <param name="height">The height.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.Print(OxyPlot.IPlotModel,System.Double,System.Double)">
+            <summary>
+            Prints the specified plot model.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="width">The width (using the actual media width if set to NaN).</param>
+            <param name="height">The height (using the actual media height if set to NaN).</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.Export(OxyPlot.IPlotModel,System.IO.Stream)">
+            <summary>
+            Exports the specified <see cref="T:OxyPlot.PlotModel" /> to the specified <see cref="T:System.IO.Stream" />.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.Print(OxyPlot.IPlotModel)">
+            <summary>
+            Prints the specified plot model.
+            </summary>
+            <param name="model">The model.</param>
+        </member>
+        <member name="M:OxyPlot.Wpf.XpsExporter.Write(OxyPlot.IPlotModel,System.Windows.Xps.XpsDocumentWriter)">
+            <summary>
+            Write the specified <see cref="T:OxyPlot.IPlotModel" /> to the specified <see cref="T:System.Windows.Xps.XpsDocumentWriter" />.
+            </summary>
+            <param name="model">The model.</param>
+            <param name="writer">The document writer.</param>
+        </member>
+    </members>
+</doc>
